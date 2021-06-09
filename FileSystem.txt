@@ -1,0 +1,52 @@
+import SwiftUI
+
+class FileSystem{
+    func getFileDir(filename: String) -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+
+        return paths[0].appendingPathComponent(filename)
+    }
+
+    func FileList(Dirname:String) -> [String] {
+        do {
+            let items = try FileManager.default.contentsOfDirectory(atPath: getFileDir(filename: Dirname).path)
+
+            return items
+        } catch {
+            return []
+        }
+    }
+
+    func ReadFile(Fname: String ) -> String  {
+        if(IsExists(Filename: Fname) == false){
+            return "Error"
+        }else{
+            let url = getFileDir(filename: Fname)
+            let data = try! Data(contentsOf: url)
+            let string = String(data: data, encoding: .utf8)!
+            print("Read Data at " + Fname + " \"" + string + "\"")
+            return string
+        }
+    }
+
+    func IsExists(Filename:String)-> Bool{
+        let fileManager = FileManager.init()
+        let output = fileManager.fileExists(atPath: getFileDir(filename: Filename).path)
+        if(output == true){
+            print("\(Filename) is exists")
+        }else{
+            print("\(Filename) is not exists")
+        }
+        return output
+    }
+
+    func WriteFile(Fname: String , data: String) -> Void  {
+        do {
+            try data.write(to: getFileDir(filename: Fname), atomically: true, encoding: .utf8)
+            print("Write Data at " + Fname + " \"" + data + "\"")
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+}

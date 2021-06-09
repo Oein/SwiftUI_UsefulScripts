@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.44">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px Helvetica; min-height: 29.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Apple SD Gothic Neo'}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Apple SD Gothic Neo'; min-height: 13.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 22.0px 'Maplestory OTF Light'; color: #ffffff; color: rgba(255, 255, 255, 0.85); background-color: #1f1f24}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 22.0px 'Maplestory OTF Light'; color: #d0a8ff; background-color: #1f1f24}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Apple SD Gothic Neo'}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Helvetica; min-height: 13.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Apple SD Gothic Neo'; min-height: 24.0px}
+    span.s1 {font: 11.0px 'Apple SD Gothic Neo'}
+    span.s2 {font: 11.0px Helvetica}
+    span.s3 {color: #fc5fa3}
+    span.s4 {color: rgba(255, 255, 255, 0.85)}
+    span.s5 {font: 20.0px Helvetica}
+    span.s6 {color: #9ef1dd}
+    span.s7 {color: #d0a8ff}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="Apple-converted-space"> </span>- ContactSystem -</p>
+<p class="p2"><br></p>
+<p class="p3">ContactSystem (<span class="s1">이)라는</span> class<span class="s1">를</span> <span class="s1">통해</span> <span class="s1">연락처에</span> <span class="s1">접근</span></p>
+<p class="p4"><span class="s2">AContact </span>(이)라는 class는 연락쳐 정보를 저장</p>
+<p class="p5"><br></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s3"><b>class</b></span><b> AContact{</b></p>
+<p class="p7"><span class="s4"><b><span class="Apple-converted-space">    </span>name:</b></span><b>String // 이름 (성 + 이름)</b></p>
+<p class="p7"><span class="s4"><b><span class="Apple-converted-space">    </span>phoneNum:</b></span><b>String // 전화번호 한 연락쳐에 저장된 번호중 첫번쨰로 등록된 번호</b></p>
+<p class="p6"><b>} <span class="Apple-converted-space">                                                            <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>   </span></b></p>
+<p class="p5"><br></p>
+<p class="p5"><br></p>
+<p class="p8">name : 성 + 이름 ( familyName + givenName )</p>
+<p class="p8">phoneNum : 전화번호 ( phoneNumbers[0] )</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s3"><b>enum</b></span><b> type {</b></p>
+<p class="p6"><b><span class="Apple-converted-space">    </span></b><span class="s3"><b>case</b></span><b> phoneNumber , name</b></p>
+<p class="p6"><b>}<span class="Apple-converted-space">              <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>   </span></b></p>
+<p class="p9"><br></p>
+<p class="p8"><span class="s5">type</span> (이)라는 enum은 [AContact]를 가져올떄 어떤 형식을 통해 가져올지</p>
+<p class="p8"><span class="Apple-tab-span">	</span>phoneNumber : 전화번호으로 가져오기</p>
+<p class="p8"><span class="Apple-tab-span">	</span>name : 이름으로 가져오기</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s3"><b>class</b></span><b> ACList{</b></p>
+<p class="p6"><b><span class="Apple-converted-space">    </span></b><span class="s3"><b>var</b></span><b> acs:[</b><span class="s6"><b>AContact</b></span><b>]</b></p>
+<p class="p6"><b>}<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">   </span></b></p>
+<p class="p5"><span class="Apple-converted-space"> </span></p>
+<p class="p8">내가 전화번호 리스트 만들려고 만든거</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s3"><b>class</b></span><b> ContactSystem{<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b><span class="s3"><b>func</b></span><b> getContact(getType:</b><span class="s6"><b>type</b></span><b> , settedValue:</b><span class="s7"><b>String</b></span><b>) -&gt; [</b><span class="s6"><b>AContact</b></span><b>]</b></p>
+<p class="p6"><b><span class="Apple-tab-span">	</span></b><span class="s3"><b>func</b></span><b> saveContact(firstName:</b><span class="s7"><b>String</b></span><b> , secondName:</b><span class="s7"><b>String</b></span><b> , phoneNum:</b><span class="s7"><b>String</b></span><b>)</b></p>
+<p class="p6"><b>}<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">   </span></b></p>
+<p class="p5"><span class="Apple-converted-space"> </span></p>
+<p class="p8">ContactSystem : 주요 class</p>
+<p class="p8"><span class="Apple-tab-span">	</span>getContact : 연락쳐들 가져오기</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>getType : 가져올 방식</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>settedValue : 연락쳐에 어떤 데이터가 있어야 하는지</p>
+<p class="p10"><br></p>
+<p class="p8"><span class="Apple-tab-span">	</span>saveContact : 연락쳐 저장</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>firstName : 성</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>secondName : 이름</p>
+<p class="p8"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>phoneNum : 전화번호 ( 여려게 X )</p>
+<p class="p10"><br></p>
+<p class="p10"><br></p>
+<p class="p8">예제들</p>
+<p class="p10"><br></p>
+<p class="p6"><b>saveContact(firstName: "멍" , secondName: "청이" , phoneNum: "+821000000000")</b></p>
+<p class="p10"><br></p>
+<p class="p8">+821000000000이라는 전화번호를 가진 멍청이라는 이름을 가진 사람의 연락쳐를 iPhone에 저장</p>
+<p class="p10"><br></p>
+<p class="p6"><b>getContact(getType:</b><span class="s6"><b>.phoneNumber</b></span><b> , settedValue:</b><span class="s7"><b> "+821000000000"</b></span><b>)</b></p>
+<p class="p10"><br></p>
+<p class="p8">"+821000000000"이란 String이 전화번호에 포함되있는 [AContact]를 반환</p>
+<p class="p10"><br></p>
+<p class="p6"><b>getContact(getType:</b><span class="s6"><b>.name</b></span><b> , settedValue:</b><span class="s7"><b> "청이"</b></span><b>)</b></p>
+<p class="p10"><br></p>
+<p class="p8">"청이"이란 String이 이름에 포함되있는 [AContact]를 반환</p>
+</body>
+</html>

@@ -1,0 +1,167 @@
+//
+//  Contact.swift
+//  CallingApp
+//
+//  Created by Oein on 2021/06/01.
+//
+
+import SwiftUI
+import Contacts
+import ContactsUI
+
+class AContact{
+    var name:String = ""
+    var phoneNum:String = ""
+    
+    init() {
+        name = ""
+        phoneNum = ""
+    }
+}
+
+enum type {
+    case phoneNumber , name
+}
+
+class ACList{
+    var acs:[AContact] = []
+    init(){
+        acs = []
+    }
+}
+
+class ContactSystem{
+    var contacts: NSMutableArray = NSMutableArray()
+    
+    private func getCNContactFetchRequest() -> CNContactFetchRequest {
+
+        // 주소록에서 읽어올 key 설정
+
+        let keys: [CNKeyDescriptor] = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+
+                                       CNContactPhoneNumbersKey,
+
+                                       CNContactEmailAddressesKey,
+
+                                       CNContactJobTitleKey,
+
+                                       CNContactPostalAddressesKey] as! [CNKeyDescriptor]
+
+        
+
+        return CNContactFetchRequest(keysToFetch: keys)
+
+    }
+    
+    init() {
+        let store = CNContactStore()
+
+        
+
+        // Permission 획득
+
+        store.requestAccess(for: .contacts) { (granted, error) in
+
+            guard granted else {
+
+                return;
+
+            }
+
+            
+
+            // Request 생성
+
+            let request: CNContactFetchRequest = self.getCNContactFetchRequest()
+
+            
+
+            // 주소록 읽을 때 정렬해서 읽어오도록 설정
+
+            request.sortOrder = CNContactSortOrder.userDefault
+
+            
+
+            // Contacts 읽기
+
+            // 주소록이 1개씩 읽혀서 usingBlock으로 들어온다.
+
+            try! store.enumerateContacts(with: request, usingBlock: { (contact, stop) in
+
+                
+
+                // Phone No가 없을때 return
+
+                if contact.phoneNumbers.isEmpty {
+
+                    return
+
+                }
+
+                
+
+                // NSMutableArray Add contact
+
+                // 읽어온 주소록을 NSMutableArray에 저장
+
+                self.contacts.add(contact)
+
+            })
+
+        }
+//
+//        print(((contacts as! NSMutableArray)[0] as! CNContact).familyName)
+//        print(((contacts as! NSMutableArray)[0] as! CNContact).phoneNumbers[0].value.stringValue)
+    }
+    
+    
+    //getType : 가져올 방법 , settedValue : 가저올 방법의 데이터
+    func getContact(getType:type , settedValue:String) -> [AContact] {
+        switch getType {
+        case .phoneNumber:
+            var rtVals : [AContact] = []
+            for conta in contacts {
+                print("in Contact.swift : HN - " + ((conta as! CNContact).familyName + (conta as! CNContact).givenName))
+                for phNum in (conta as! CNContact).phoneNumbers {
+                    print("in Contact.swift : SV - " + settedValue.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+", with: ""))
+                    print("in Contact.swift : PV - " + phNum.value.stringValue.replacingOccurrences(of: "-", with: ""))
+                    if(phNum.value.stringValue.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+", with: "").contains(settedValue.replacingOccurrences(of: "-", with: ""))){
+                        let rtVal = AContact()
+                        rtVal.name = ((conta as! CNContact).familyName + (conta as! CNContact).givenName)
+                        rtVal.phoneNum = phNum.value.stringValue
+                        rtVals.append(rtVal)
+                    }
+                }
+            }
+            return rtVals
+        case .name:
+            var rtVals : [AContact] = []
+            for conta in contacts {
+                if(((conta as! CNContact).familyName + (conta as! CNContact).givenName) == settedValue){
+                    let rtVal = AContact()
+                    rtVal.name = ((conta as! CNContact).familyName + (conta as! CNContact).givenName)
+                    rtVal.phoneNum = (conta as! CNContact).phoneNumbers[0].value.stringValue
+                    rtVals.append(rtVal)
+                }
+            }
+            return rtVals
+        }
+    }
+    
+    public func saveContact(firstName:String , secondName:String , phoneNum:String){
+        let store = CNContactStore()
+        let newContact = CNMutableContact()
+        newContact.givenName = secondName //이름
+        newContact.familyName = firstName //성
+        newContact.phoneNumbers.append(CNLabeledValue<CNPhoneNumber>(label: phoneNum, value: CNPhoneNumber(stringValue: phoneNum)))
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(newContact, toContainerWithIdentifier: nil)
+
+        do {
+            try store.execute(saveRequest)
+        } catch {
+            print("Saving contact failed, error: \(error)")
+            // Handle the error
+        }
+    }
+}
